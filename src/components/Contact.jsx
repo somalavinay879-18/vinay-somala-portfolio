@@ -2,60 +2,67 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="bg-slate-800 text-white py-20 px-8"
+            className="py-24 bg-slate-900 text-white"
         >
-            <div className="max-w-5xl mx-auto text-center">
+            <div className="max-w-5xl mx-auto px-6 text-center">
 
                 <h2 className="text-5xl font-bold text-cyan-400 mb-6">
-                    Contact
+                    Contact Me
                 </h2>
 
-                <p className="text-xl text-gray-300 mb-12">
-                    I'm currently looking for Working Student and Internship
-                    opportunities in Data Science, Machine Learning, AI,
-                    SAP S/4HANA MM, and Data Analytics.
-                    Feel free to connect with me.
+                <p className="text-gray-300 text-lg mb-12">
+                    I'm currently looking for Working Student roles, Internships,
+                    and opportunities in Data Science, Machine Learning, and SAP MM.
+                    Feel free to reach out!
                 </p>
 
-                <div className="space-y-6 text-xl">
+                <div className="grid md:grid-cols-3 gap-8">
 
-                    <p>
-                        📧 <span className="font-semibold">Email:</span>{" "}
+                    {/* Email */}
+                    <div className="bg-slate-800 rounded-2xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition">
+                        <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
+                            Email
+                        </h3>
+
                         <a
                             href="mailto:somalavinay879@gmail.com"
-                            className="text-cyan-400 hover:underline"
+                            className="text-gray-300 hover:text-cyan-400"
                         >
                             somalavinay879@gmail.com
                         </a>
-                    </p>
+                    </div>
 
-                    <p>
-                        💼 <span className="font-semibold">LinkedIn:</span>{" "}
+                    {/* LinkedIn */}
+                    <div className="bg-slate-800 rounded-2xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition">
+                        <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
+                            LinkedIn
+                        </h3>
+
                         <a
-                            href="https://www.linkedin.com/in/vinaysomala/"
+                            href="https://linkedin.com/in/vinay-somala"
                             target="_blank"
                             rel="noreferrer"
-                            className="text-cyan-400 hover:underline"
+                            className="text-gray-300 hover:text-cyan-400"
                         >
-                            linkedin.com/in/vinaysomala
+                            linkedin.com/in/vinay-somala
                         </a>
-                    </p>
+                    </div>
 
-                    <p>
-                        🐙 <span className="font-semibold">GitHub:</span>{" "}
+                    {/* GitHub */}
+                    <div className="bg-slate-800 rounded-2xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition">
+                        <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
+                            GitHub
+                        </h3>
+
                         <a
                             href="https://github.com/somalavinay879-18"
                             target="_blank"
                             rel="noreferrer"
-                            className="text-cyan-400 hover:underline"
+                            className="text-gray-300 hover:text-cyan-400"
                         >
                             github.com/somalavinay879-18
                         </a>
-                    </p>
-
-                    <p>
-                        📍 <span className="font-semibold">Location:</span> Hamburg, Germany
-                    </p>
+                    </div>
 
                 </div>
 

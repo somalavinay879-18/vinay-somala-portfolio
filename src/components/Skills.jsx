@@ -1,37 +1,26 @@
 export default function Skills() {
-    const skillCategories = [
+    const categories = [
         {
             title: "Programming",
-            skills: ["Python", "SQL", "JavaScript", "HTML", "CSS"],
+            skills: ["Python", "Java", "SQL", "JavaScript"],
         },
         {
-            title: "Data Science & AI",
+            title: "Data Science",
             skills: [
                 "Machine Learning",
-                "Deep Learning",
-                "Data Analysis",
                 "Pandas",
                 "NumPy",
                 "Scikit-learn",
+                "Matplotlib",
             ],
         },
         {
-            title: "Databases",
+            title: "Database",
             skills: [
                 "MySQL",
                 "PostgreSQL",
                 "DuckDB",
-                "Database Management Systems",
-            ],
-        },
-        {
-            title: "SAP & Supply Chain",
-            skills: [
-                "SAP S/4HANA MM",
-                "Demand Forecasting",
-                "Inventory Management",
-                "Logistics",
-                "Transportation",
+                "MongoDB",
             ],
         },
         {
@@ -44,33 +33,40 @@ export default function Skills() {
                 "Streamlit",
             ],
         },
+        {
+            title: "SAP & Supply Chain",
+            skills: [
+                "SAP S/4HANA MM",
+                "Demand Forecasting",
+                "Logistics",
+                "Transportation",
+                "Inventory Management",
+            ],
+        },
     ];
 
     return (
-        <section
-            id="skills"
-            className="bg-slate-900 text-white py-20 px-8"
-        >
-            <div className="max-w-6xl mx-auto">
+        <section id="skills" className="py-24 bg-slate-900 text-white">
+            <div className="max-w-6xl mx-auto px-6">
                 <h2 className="text-5xl font-bold text-cyan-400 mb-12">
                     Skills
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                    {skillCategories.map((category, index) => (
+                    {categories.map((category) => (
                         <div
-                            key={index}
-                            className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-cyan-500/20 transition duration-300"
+                            key={category.title}
+                            className="bg-slate-800 rounded-2xl p-6 hover:shadow-cyan-500/20 hover:shadow-lg transition"
                         >
-                            <h3 className="text-2xl font-bold text-cyan-300 mb-6">
+                            <h3 className="text-2xl font-semibold text-cyan-400 mb-5">
                                 {category.title}
                             </h3>
 
                             <div className="flex flex-wrap gap-3">
-                                {category.skills.map((skill, i) => (
+                                {category.skills.map((skill) => (
                                     <span
-                                        key={i}
-                                        className="bg-cyan-900/60 text-white px-4 py-2 rounded-full"
+                                        key={skill}
+                                        className="bg-cyan-600/30 text-cyan-200 px-4 py-2 rounded-full"
                                     >
                                         {skill}
                                     </span>
