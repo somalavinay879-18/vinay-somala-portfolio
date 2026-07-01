@@ -40,7 +40,6 @@ const Hero = () => {
 
                 {/* Buttons */}
                 <div className="mt-10 flex justify-center gap-5 flex-wrap">
-                    {/* Resume */}
                     <a
                         href="/resume.pdf"
                         target="_blank"
@@ -50,7 +49,6 @@ const Hero = () => {
                         Resume
                     </a>
 
-                    {/* GitHub */}
                     <a
                         href="https://github.com/somalavinay879-18"
                         target="_blank"
@@ -60,9 +58,8 @@ const Hero = () => {
                         GitHub
                     </a>
 
-                    {/* LinkedIn */}
                     <a
-                        href="https://www.linkedin.com/in/vinaysomala"
+                        href="https://www.linkedin.com/in/vinaysomala/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition duration-300"
