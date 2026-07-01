@@ -1,55 +1,83 @@
-export default function Hero() {
+import React from "react";
+
+const Hero = () => {
     return (
         <section
             id="home"
-            className="min-h-screen flex flex-col justify-center items-center bg-slate-900 text-white pt-24 px-6"
+            className="min-h-screen bg-[#0F172A] flex items-center justify-center pt-24"
         >
-            {/* Profile Photo */}
-            <img
-                src="/profile.jpg"
-                alt="Vinay Somala"
-                className="w-48 h-48 rounded-full object-cover border-4 border-cyan-400 shadow-lg shadow-cyan-500/40 mb-8"
-            />
+            <div className="max-w-7xl mx-auto px-6 text-center">
 
-            <h1 className="text-6xl md:text-7xl font-bold text-cyan-400 text-center">
-                Vinay Somala
-            </h1>
+                {/* Profile Image */}
+                <div className="flex justify-center mb-10">
+                    <div className="relative">
 
-            <h2 className="text-3xl mt-4 text-center">
-                Applied Data Science Student
-            </h2>
+                        {/* Glow */}
+                        <div className="absolute inset-0 rounded-full bg-cyan-400 blur-3xl opacity-30 animate-pulse"></div>
 
-            <p className="mt-4 text-xl text-gray-300 text-center">
-                Python • Machine Learning • SQL • SAP S/4HANA MM
-            </p>
+                        <div className="relative w-60 h-60 lg:w-72 lg:h-72 rounded-full overflow-hidden border-[5px] border-cyan-400 shadow-[0_0_50px_rgba(34,211,238,0.45)]">
 
-            <div className="mt-8 flex flex-wrap justify-center gap-5">
-                <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    className="bg-cyan-500 px-6 py-3 rounded-lg hover:bg-cyan-600 transition"
-                >
-                    Resume
-                </a>
+                            <img
+                                src="/profile.jpg"
+                                alt="Vinay Somala"
+                                className="w-full h-full object-cover object-top scale-110"
+                            />
 
-                <a
-                    href="https://github.com/somalavinay879-18"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-slate-800 border border-cyan-500 px-6 py-3 rounded-lg hover:bg-cyan-500 transition"
-                >
-                    GitHub
-                </a>
+                        </div>
 
-                <a
-                    href="https://www.linkedin.com/in/vinay-somala"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-slate-800 border border-cyan-500 px-6 py-3 rounded-lg hover:bg-cyan-500 transition"
-                >
-                    LinkedIn
-                </a>
+                    </div>
+                </div>
+
+                {/* Name */}
+                <h1 className="text-5xl md:text-7xl font-extrabold text-cyan-400">
+                    Vinay Somala
+                </h1>
+
+                {/* Subtitle */}
+                <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white">
+                    Applied Data Science Student
+                </h2>
+
+                {/* Skills */}
+                <p className="mt-5 text-lg text-slate-300">
+                    Python • Machine Learning • SQL • SAP S/4HANA MM
+                </p>
+
+                {/* Buttons */}
+                <div className="mt-10 flex justify-center gap-5 flex-wrap">
+
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-8 py-3 rounded-lg transition"
+                    >
+                        Resume
+                    </a>
+
+                    <a
+                        href="https://github.com/YOUR_GITHUB_USERNAME"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition"
+                    >
+                        GitHub
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition"
+                    >
+                        LinkedIn
+                    </a>
+
+                </div>
+
             </div>
         </section>
     );
-}
+};
+
+export default Hero;
