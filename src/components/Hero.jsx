@@ -56,7 +56,7 @@ const Hero = () => {
                     </a>
 
                     <a
-                        href="https://github.com/YOUR_GITHUB_USERNAME"
+                        href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition"
