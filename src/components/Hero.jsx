@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const Hero = () => {
@@ -7,15 +8,18 @@ const Hero = () => {
             className="min-h-screen bg-[#0F172A] flex items-center justify-center pt-24"
         >
             <div className="max-w-7xl mx-auto px-6 text-center">
+
                 {/* Profile Image */}
                 <div className="flex justify-center mb-10">
                     <div className="relative">
-                        {/* Glow */}
+
+                        {/* Glow Effect */}
                         <div className="absolute inset-0 rounded-full bg-cyan-400 blur-3xl opacity-30 animate-pulse"></div>
 
+                        {/* New Profile Photo */}
                         <div className="relative w-60 h-60 lg:w-72 lg:h-72 rounded-full overflow-hidden border-[5px] border-cyan-400 shadow-[0_0_50px_rgba(34,211,238,0.45)]">
                             <img
-                                src="/profile.jpg"
+                                src="/vinay.jpg"
                                 alt="Vinay Somala"
                                 className="w-full h-full object-cover object-top scale-110"
                             />
@@ -28,18 +32,19 @@ const Hero = () => {
                     Vinay Somala
                 </h1>
 
-                {/* Subtitle */}
+                {/* Professional Subtitle */}
                 <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white">
-                    Applied Data Science Student
+                    Applied Data Science & Artificial Intelligence
                 </h2>
 
                 {/* Skills */}
                 <p className="mt-5 text-lg text-slate-300">
-                    Python • Machine Learning • SQL • SAP S/4HANA MM
+                    Python • SQL • Power BI • SAP S/4HANA MM • Supply Chain Analytics
                 </p>
 
                 {/* Buttons */}
                 <div className="mt-10 flex justify-center gap-5 flex-wrap">
+
                     {/* Resume Button */}
                     <a
                         href="/VINAY.pdf"
@@ -69,6 +74,7 @@ const Hero = () => {
                     >
                         LinkedIn
                     </a>
+
                 </div>
             </div>
         </section>
