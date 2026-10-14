@@ -1,68 +1,131 @@
+
+import {
+    Mail,
+    Linkedin,
+    Github,
+    Globe,
+    MapPin,
+    ExternalLink,
+} from "lucide-react";
+
 export default function Contact() {
+    const contacts = [
+        {
+            title: "Email",
+            detail: "vinay.doer@gmail.com",
+            href: "mailto:vinay.doer@gmail.com",
+            icon: Mail,
+        },
+        {
+            title: "LinkedIn",
+            detail: "linkedin.com/in/vinaysomala",
+            href: "https://www.linkedin.com/in/vinaysomala/",
+            icon: Linkedin,
+        },
+        {
+            title: "GitHub",
+            detail: "github.com/somalavinay879-18",
+            href: "https://github.com/somalavinay879-18",
+            icon: Github,
+        },
+        {
+            title: "Portfolio",
+            detail: "somalavinay.vercel.app",
+            href: "https://somalavinay.vercel.app",
+            icon: Globe,
+        },
+    ];
+
     return (
         <section
             id="contact"
-            className="py-24 bg-slate-900 text-white"
+            className="bg-slate-900 text-white py-20 px-6"
         >
-            <div className="max-w-5xl mx-auto px-6 text-center">
+            <div className="max-w-6xl mx-auto">
 
-                <h2 className="text-5xl font-bold text-cyan-400 mb-6">
-                    Contact Me
-                </h2>
+                {/* Section Heading */}
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-6">
+                        Get in Touch
+                    </h2>
 
-                <p className="text-gray-300 text-lg mb-12">
-                    I'm currently looking for Working Student roles, Internships,
-                    and opportunities in Data Science, Machine Learning, and SAP MM.
-                    Feel free to reach out!
-                </p>
+                    <p className="text-lg text-gray-300 leading-8 max-w-3xl mx-auto">
+                        I am open to Working Student and Internship
+                        opportunities in Data Science, Data Analytics,
+                        SAP MM, Procurement, and Supply Chain Analytics
+                        in Germany.
+                    </p>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                    <p className="text-gray-400 mt-5 flex items-center justify-center gap-2">
+                        <MapPin
+                            size={18}
+                            className="text-cyan-400"
+                        />
+                        Hamburg, Germany
+                    </p>
+                </div>
 
-                    {/* Email */}
-                    <div className="bg-slate-800 rounded-2xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition">
-                        <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
-                            Email
-                        </h3>
+                {/* Contact Cards */}
+                <div className="grid sm:grid-cols-2 gap-6">
 
-                        <a
-                            href="mailto:somalavinay879@gmail.com"
-                            className="text-gray-300 hover:text-cyan-400"
-                        >
-                            somalavinay879@gmail.com
-                        </a>
-                    </div>
+                    {contacts.map((contact) => {
+                        const Icon = contact.icon;
 
-                    {/* LinkedIn */}
-                    <div className="bg-slate-800 rounded-2xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition">
-                        <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
-                            LinkedIn
-                        </h3>
+                        return (
+                            <a
+                                key={contact.title}
+                                href={contact.href}
+                                target={
+                                    contact.title === "Email"
+                                        ? undefined
+                                        : "_blank"
+                                }
+                                rel={
+                                    contact.title === "Email"
+                                        ? undefined
+                                        : "noopener noreferrer"
+                                }
+                                className="group block bg-slate-800 border border-slate-700 rounded-2xl p-6 md:p-8 hover:border-cyan-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400 transition duration-300"
+                            >
+                                <div className="flex items-start justify-between mb-5">
+                                    <Icon
+                                        size={30}
+                                        className="text-cyan-400"
+                                    />
 
-                        <a
-                            href="https://linkedin.com/in/vinay-somala"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-gray-300 hover:text-cyan-400"
-                        >
-                            linkedin.com/in/vinay-somala
-                        </a>
-                    </div>
+                                    <ExternalLink
+                                        size={18}
+                                        className="text-gray-400 group-hover:text-cyan-400 transition"
+                                    />
+                                </div>
 
-                    {/* GitHub */}
-                    <div className="bg-slate-800 rounded-2xl p-6 hover:shadow-lg hover:shadow-cyan-500/20 transition">
-                        <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
-                            GitHub
-                        </h3>
+                                <h3 className="text-xl font-semibold text-white mb-3">
+                                    {contact.title}
+                                </h3>
 
-                        <a
-                            href="https://github.com/somalavinay879-18"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-gray-300 hover:text-cyan-400"
-                        >
-                            github.com/somalavinay879-18
-                        </a>
-                    </div>
+                                <p className="text-gray-300 group-hover:text-cyan-300 text-sm md:text-base break-words transition">
+                                    {contact.detail}
+                                </p>
+                            </a>
+                        );
+                    })}
+
+                </div>
+
+                {/* Email Call to Action */}
+                <div className="text-center mt-12">
+
+                    <p className="text-gray-300 text-lg mb-6">
+                        Interested in connecting or discussing an opportunity?
+                    </p>
+
+                    <a
+                        href="mailto:vinay.doer@gmail.com?subject=Portfolio%20Inquiry"
+                        className="inline-flex items-center justify-center gap-3 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-semibold px-8 py-4 rounded-xl transition duration-300"
+                    >
+                        <Mail size={20} />
+                        Send Me an Email
+                    </a>
 
                 </div>
 
