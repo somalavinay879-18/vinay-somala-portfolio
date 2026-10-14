@@ -1,3 +1,4 @@
+
 export default function Projects() {
     const projects = [
         {
@@ -12,9 +13,9 @@ export default function Projects() {
                 "CSS",
                 "Docker",
             ],
-            github: "https://github.com/somalavinay879-18/CareerTrack",
+            github:
+                "https://github.com/somalavinay879-18/CareerTrack",
         },
-
         {
             title: "Cryptocurrency Price Direction Prediction",
             description:
@@ -29,7 +30,6 @@ export default function Projects() {
             github:
                 "https://github.com/somalavinay879-18/crypto-price-prediction-ml",
         },
-
         {
             title: "Supermarket Sales Data Pipeline",
             description:
@@ -48,54 +48,77 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="bg-slate-800 text-white py-20 px-8"
+            className="bg-slate-800 text-white py-20 px-6 md:px-8"
         >
             <div className="max-w-7xl mx-auto">
 
-                <h2 className="text-5xl font-bold text-cyan-400 mb-4">
+                {/* Section Heading */}
+                <h2 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4">
                     Projects
                 </h2>
 
-                <p className="text-gray-400 text-lg mb-12">
-                    Selected projects showcasing my experience in Data Science,
-                    Machine Learning, Data Engineering, and Full-Stack Development.
+                <p className="text-gray-300 text-lg mb-12 max-w-4xl">
+                    Selected projects showcasing my practical
+                    experience in Data Science, Machine Learning,
+                    Data Engineering, and Full-Stack Development.
+                    Click any project to explore its GitHub repository.
                 </p>
 
+                {/* Project Cards */}
                 <div className="grid md:grid-cols-2 gap-8">
 
                     {projects.map((project) => (
-                        <div
+                        <a
                             key={project.title}
-                            className="bg-slate-900 rounded-2xl p-8 shadow-lg hover:-translate-y-2 hover:shadow-cyan-500/30 transition duration-300"
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${project.title} on GitHub`}
+                            className="group block bg-slate-900 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-lg hover:border-cyan-400 hover:-translate-y-2 hover:shadow-cyan-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400 transition duration-300 cursor-pointer"
                         >
-                            <h3 className="text-2xl font-bold text-cyan-400 mb-4">
-                                {project.title}
-                            </h3>
 
+                            {/* Project Title */}
+                            <div className="flex items-start justify-between gap-4 mb-4">
+
+                                <h3 className="text-xl md:text-2xl font-bold text-cyan-400 group-hover:text-cyan-300 transition">
+                                    {project.title}
+                                </h3>
+
+                                <span
+                                    aria-hidden="true"
+                                    className="text-cyan-400 text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                                >
+                                    ↗
+                                </span>
+
+                            </div>
+
+                            {/* Project Description */}
                             <p className="text-gray-300 leading-8 mb-6">
                                 {project.description}
                             </p>
 
-                            <div className="flex flex-wrap gap-3 mb-6">
+                            {/* Technologies */}
+                            <div className="flex flex-wrap gap-3 mb-8">
+
                                 {project.tech.map((item) => (
                                     <span
                                         key={item}
-                                        className="bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm"
+                                        className="bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm"
                                     >
                                         {item}
                                     </span>
                                 ))}
+
                             </div>
 
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-block bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg transition"
-                            >
-                                View on GitHub →
-                            </a>
-                        </div>
+                            {/* Visual GitHub Button */}
+                            <span className="inline-flex items-center gap-2 bg-cyan-500 group-hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition duration-300">
+                                View GitHub Repository
+                                <span aria-hidden="true">↗</span>
+                            </span>
+
+                        </a>
                     ))}
 
                 </div>
