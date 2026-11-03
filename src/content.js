@@ -12,8 +12,8 @@ export const profile = {
     email: "vinay.doer@gmail.com",
     linkedin: "https://www.linkedin.com/in/vinaysomala/",
     github: "https://github.com/somalavinay879-18",
-    cv: "/Vinay_Somala_CV.pdf",
-    cvs: [{ label: "Download CV", href: "/Vinay_Somala_CV.pdf" }],
+           cv: "/Vinay_Somala.pdf",
+       cvs: [{ label: "Download CV", href: "/Vinay_Somala.pdf" }],
     photo: "/vinay-portrait.jpg",
 };
 
