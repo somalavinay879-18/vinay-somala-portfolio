@@ -148,8 +148,8 @@ export const projects = [
         title: "Cryptocurrency Price Direction Prediction",
         kind: "Machine learning",
         summary:
-            "Predicts the next 15-minute price direction for five crypto pairs from engineered time-series features, comparing Logistic Regression, Random Forest and XGBoost on a time-based split to avoid leakage.",
-        tech: ["Python", "scikit-learn", "XGBoost", "Pandas"],
+            "Predicts the next 15-minute price direction for five crypto pairs from 851,505 candles. On a strict time-based split, Random Forest and XGBoost reach 52.5% accuracy against 50.2% for a majority-class baseline. Refactored from a notebook into a tested Python package, with 12 tests that check for look-ahead leakage.",
+        tech: ["Python", "scikit-learn", "XGBoost", "pandas", "pytest", "GitHub Actions"],
         href: "https://github.com/somalavinay879-18/crypto-price-prediction-ml",
     },
     {
