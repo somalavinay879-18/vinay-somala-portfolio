@@ -1,27 +1,23 @@
-import Navbar from "./components/Navbar";
+import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Education from "./components/Education";
-import SAP from "./components/SAP";
-import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Sap from "./components/Sap";
+import Credentials from "./components/Credentials";
+import Background from "./components/Background";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <SAP />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </>
-  );
+export default function App() {
+    return (
+        <>
+            <Nav />
+            <main>
+                <Hero />
+                <Projects />
+                <Sap />
+                <Credentials />
+                <Background />
+                <Contact />
+            </main>
+        </>
+    );
 }
-
-export default App;

@@ -1,17 +1,61 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@theme {
+    --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+    --font-display: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+
+    --color-paper: #ffffff;
+    --color-mist: #f3f6f8;
+    --color-ink: #13233a;
+    --color-slate: #4b5a6b;
+    --color-rule: #dce3ea;
+    --color-pine: #0b6e58;
+    --color-pine-dark: #08523f;
+    --color-amber: #c97a12;
 }
 
-section {
-  scroll-margin-top: 90px;
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #0f172a;
-  color: white;
-  overflow-x: hidden;
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-pine);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* The one animation: the links between SAP and data draw in on load */
+@media (prefers-reduced-motion: no-preference) {
+    .lane-link {
+        transform-origin: top;
+        animation: lane-draw 700ms ease-out 400ms both;
+    }
+
+    @keyframes lane-draw {
+        from {
+            transform: scaleY(0);
+        }
+        to {
+            transform: scaleY(1);
+        }
+    }
 }

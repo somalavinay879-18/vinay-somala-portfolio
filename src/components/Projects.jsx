@@ -1,129 +1,151 @@
+import { useState } from "react";
+import { ChevronDown, ExternalLink } from "lucide-react";
+import Section, { Tags } from "./Section";
+import { featured, projects } from "../content";
 
-export default function Projects() {
-    const projects = [
-        {
-            title: "CareerTrack – Job Application Tracking System",
-            description:
-                "Developed a full-stack web application to manage and track job applications through an interactive dashboard. Features include CRUD operations, application status tracking, and Docker containerization.",
-            tech: [
-                "Python",
-                "Flask",
-                "SQLite",
-                "HTML",
-                "CSS",
-                "Docker",
-            ],
-            github:
-                "https://github.com/somalavinay879-18/CareerTrack",
-        },
-        {
-            title: "Cryptocurrency Price Direction Prediction",
-            description:
-                "Built a machine learning model to predict cryptocurrency price direction using historical market data. Applied feature engineering, data preprocessing, and model evaluation techniques.",
-            tech: [
-                "Python",
-                "Pandas",
-                "NumPy",
-                "Scikit-learn",
-                "Machine Learning",
-            ],
-            github:
-                "https://github.com/somalavinay879-18/crypto-price-prediction-ml",
-        },
-        {
-            title: "Supermarket Sales Data Pipeline",
-            description:
-                "Designed a local data engineering pipeline using Python, DuckDB, SQL, and Streamlit to analyze supermarket sales data and generate interactive business insights.",
-            tech: [
-                "Python",
-                "DuckDB",
-                "SQL",
-                "Streamlit",
-            ],
-            github:
-                "https://github.com/somalavinay879-18/supermarket-data-pipeline",
-        },
-    ];
+function Pipeline() {
+    return (
+        <div className="mt-8">
+            <h4 className="font-semibold text-ink">How the pipeline works</h4>
+            <ol className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-6 lg:gap-0">
+                {featured.pipeline.map((stage, i) => (
+                    <li
+                        key={stage.step}
+                        className="relative flex items-start gap-3 rounded-md bg-mist px-4 py-3 lg:flex-col lg:gap-1 lg:rounded-none lg:border-l lg:border-paper lg:first:rounded-l-md lg:first:border-l-0 lg:last:rounded-r-md"
+                    >
+                        <span className="text-sm font-semibold tabular-nums text-pine">{i + 1}</span>
+                        <span>
+                            <span className="block font-medium text-ink">{stage.step}</span>
+                            <span className="block text-sm leading-snug text-slate">{stage.detail}</span>
+                        </span>
+                    </li>
+                ))}
+            </ol>
+        </div>
+    );
+}
+
+function CaseStudy() {
+    const [open, setOpen] = useState(false);
 
     return (
-        <section
-            id="projects"
-            className="bg-slate-800 text-white py-20 px-6 md:px-8"
-        >
-            <div className="max-w-7xl mx-auto">
+        <div className="mt-8 border-t border-rule pt-6">
+            <button
+                type="button"
+                onClick={() => setOpen(!open)}
+                aria-expanded={open}
+                aria-controls="olist-case-study"
+                className="inline-flex items-center gap-2 font-semibold text-pine underline-offset-4 hover:underline"
+            >
+                {open ? "Hide the case study" : "Read the full case study"}
+                <ChevronDown
+                    size={18}
+                    aria-hidden="true"
+                    className={`transition-transform duration-200 motion-reduce:transition-none ${open ? "rotate-180" : ""}`}
+                />
+            </button>
 
-                {/* Section Heading */}
-                <h2 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4">
-                    Projects
-                </h2>
-
-                <p className="text-gray-300 text-lg mb-12 max-w-4xl">
-                    Selected projects showcasing my practical
-                    experience in Data Science, Machine Learning,
-                    Data Engineering, and Full-Stack Development.
-                    Click any project to explore its GitHub repository.
-                </p>
-
-                {/* Project Cards */}
-                <div className="grid md:grid-cols-2 gap-8">
-
-                    {projects.map((project) => (
-                        <a
-                            key={project.title}
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`View ${project.title} on GitHub`}
-                            className="group block bg-slate-900 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-lg hover:border-cyan-400 hover:-translate-y-2 hover:shadow-cyan-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400 transition duration-300 cursor-pointer"
-                        >
-
-                            {/* Project Title */}
-                            <div className="flex items-start justify-between gap-4 mb-4">
-
-                                <h3 className="text-xl md:text-2xl font-bold text-cyan-400 group-hover:text-cyan-300 transition">
-                                    {project.title}
-                                </h3>
-
-                                <span
-                                    aria-hidden="true"
-                                    className="text-cyan-400 text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                                >
-                                    ↗
-                                </span>
-
-                            </div>
-
-                            {/* Project Description */}
-                            <p className="text-gray-300 leading-8 mb-6">
-                                {project.description}
-                            </p>
-
-                            {/* Technologies */}
-                            <div className="flex flex-wrap gap-3 mb-8">
-
-                                {project.tech.map((item) => (
-                                    <span
-                                        key={item}
-                                        className="bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm"
-                                    >
-                                        {item}
-                                    </span>
-                                ))}
-
-                            </div>
-
-                            {/* Visual GitHub Button */}
-                            <span className="inline-flex items-center gap-2 bg-cyan-500 group-hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition duration-300">
-                                View GitHub Repository
-                                <span aria-hidden="true">↗</span>
-                            </span>
-
-                        </a>
-                    ))}
-
-                </div>
-
+            <div id="olist-case-study" hidden={!open} className="mt-6 grid gap-x-12 gap-y-7 md:grid-cols-2">
+                {featured.caseStudy.map((part) => (
+                    <section key={part.heading} className="min-w-0">
+                        <h4 className="font-semibold text-ink">{part.heading}</h4>
+                        <p className="mt-2 max-w-prose leading-relaxed text-slate">{part.text}</p>
+                    </section>
+                ))}
             </div>
-        </section>
+        </div>
+    );
+}
+
+function Featured() {
+    return (
+        <article className="rounded-lg border border-rule bg-paper p-6 md:p-10">
+            <p className="font-medium text-pine">Main project</p>
+            <h3 className="mt-2 font-display text-2xl font-semibold text-ink md:text-3xl">
+                {featured.title}
+            </h3>
+            <p className="mt-1 text-lg text-slate">{featured.subtitle}</p>
+
+            <p className="mt-6 max-w-3xl text-[17px] leading-relaxed text-ink">{featured.summary}</p>
+
+            <dl className="mt-8 grid gap-6 border-y border-rule py-7 md:grid-cols-3 md:gap-8">
+                {featured.findings.map((finding) => (
+                    <div key={finding.label}>
+                        <dt className="font-display text-3xl font-semibold tabular-nums text-amber">{finding.value}</dt>
+                        <dd className="mt-1 leading-snug text-slate">{finding.label}</dd>
+                    </div>
+                ))}
+            </dl>
+
+            <Pipeline />
+
+            <h4 className="mt-8 font-semibold text-ink">Demand forecast and reorder points</h4>
+            <p className="mt-2 max-w-3xl leading-relaxed text-slate">{featured.forecast}</p>
+
+            <div className="mt-7">
+                <Tags items={featured.tech} />
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+                {featured.links.map((link, i) => (
+                    <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                            i === 0
+                                ? "inline-flex items-center gap-2 rounded-md bg-pine px-5 py-3 font-medium text-paper transition-colors hover:bg-pine-dark"
+                                : "inline-flex items-center gap-2 rounded-md border border-ink px-5 py-3 font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+                        }
+                    >
+                        {link.label}
+                        <ExternalLink size={16} aria-hidden="true" />
+                    </a>
+                ))}
+            </div>
+
+            <CaseStudy />
+        </article>
+    );
+}
+
+export default function Projects() {
+    return (
+        <Section
+            id="projects"
+            title="Projects"
+            intro="Real datasets, working code and results I can explain in an interview."
+        >
+            <Featured />
+
+            <ul className="mt-12 divide-y divide-rule border-t border-rule">
+                {projects.map((project) => (
+                    <li key={project.title} className="grid gap-4 py-8 md:grid-cols-[1fr_2fr] md:gap-10">
+                        <div>
+                            <h3 className="text-xl font-semibold text-ink">{project.title}</h3>
+                            <p className="mt-1 text-slate">{project.kind}</p>
+                        </div>
+                        <div>
+                            <p className="leading-relaxed text-ink">{project.summary}</p>
+                            <div className="mt-4">
+                                <Tags items={project.tech} />
+                            </div>
+                            {project.href && (
+                                <a
+                                    href={project.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-4 inline-flex items-center gap-1.5 font-medium text-pine underline-offset-4 hover:underline"
+                                >
+                                    View the code on GitHub
+                                    <ExternalLink size={15} aria-hidden="true" />
+                                </a>
+                            )}
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </Section>
     );
 }
