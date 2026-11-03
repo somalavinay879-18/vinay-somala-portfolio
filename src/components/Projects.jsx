@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import Section, { Tags } from "./Section";
+import LateChart from "./LateChart";
 import { featured, projects } from "../content";
 
 function Pipeline() {
@@ -52,6 +53,36 @@ function CaseStudy() {
                         <p className="mt-2 max-w-prose leading-relaxed text-slate">{part.text}</p>
                     </section>
                 ))}
+
+                <section className="min-w-0 md:col-span-2">
+                    <h4 className="font-semibold text-ink">Safety stock and reorder points, five largest categories</h4>
+                    <div className="mt-3 overflow-x-auto">
+                        <table className="w-full min-w-[480px] text-left tabular-nums">
+                            <thead>
+                                <tr className="border-b-2 border-ink text-sm text-slate">
+                                    <th className="py-2 pr-4 font-medium">Category</th>
+                                    <th className="py-2 pr-4 text-right font-medium">Forecast per week</th>
+                                    <th className="py-2 pr-4 text-right font-medium">Safety stock</th>
+                                    <th className="py-2 text-right font-medium">Reorder point</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-rule">
+                                {featured.inventory.map((row) => (
+                                    <tr key={row.category} className="text-ink">
+                                        <td className="py-2.5 pr-4 capitalize">{row.category}</td>
+                                        <td className="py-2.5 pr-4 text-right">{row.weekly}</td>
+                                        <td className="py-2.5 pr-4 text-right">{row.safety}</td>
+                                        <td className="py-2.5 text-right font-semibold">{row.reorder}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <p className="mt-2 text-sm text-slate">
+                        Units. Assumes a 2-week lead time and a 95% service level. Olist sellers hold the stock, so this
+                        shows the method, not a real policy.
+                    </p>
+                </section>
             </div>
         </div>
     );
@@ -76,6 +107,8 @@ function Featured() {
                     </div>
                 ))}
             </dl>
+
+            <LateChart />
 
             <Pipeline />
 

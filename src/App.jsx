@@ -1,9 +1,11 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 import Sap from "./components/Sap";
+import Experience from "./components/Experience";
 import Credentials from "./components/Credentials";
-import Background from "./components/Background";
+import Education from "./components/Education";
 import Contact from "./components/Contact";
 
 export default function App() {
@@ -13,9 +15,11 @@ export default function App() {
             <main>
                 <Hero />
                 <Projects />
+                <Skills />
                 <Sap />
+                <Experience />
                 <Credentials />
-                <Background />
+                <Education />
                 <Contact />
             </main>
         </>

@@ -4,9 +4,11 @@ import { profile } from "../content";
 
 const links = [
     { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
     { name: "SAP", href: "#sap" },
+    { name: "Experience", href: "#experience" },
     { name: "Certifications", href: "#certifications" },
-    { name: "Background", href: "#background" },
+    { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
 ];
 

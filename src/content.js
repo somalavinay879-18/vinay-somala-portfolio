@@ -3,24 +3,44 @@
 
 export const profile = {
     name: "Vinay Somala",
-    role: "Data analytics for SAP procurement and supply chain",
+    role: "Data science and SAP supply chain analytics",
     intro:
-        "M.Sc. student in Applied Data Science & AI at SRH University Hamburg. I build data pipelines, dashboards and forecasts in Python and SQL, and I have hands-on training in SAP S/4HANA MM procurement.",
+        "M.Sc. student in Applied Data Science & AI at SRH University Hamburg. I build machine-learning models, data pipelines and dashboards in Python and SQL, and I understand the business processes behind the data through hands-on SAP S/4HANA MM training.",
     seeking:
-        "Looking for a working-student role or internship in data analytics, supply chain analytics or SAP MM in Hamburg or remote.",
+        "Looking for a working-student role or internship in data science, data analytics, supply chain analytics or SAP MM, in Hamburg or remote.",
     location: "Hamburg, Germany",
     email: "vinay.doer@gmail.com",
     linkedin: "https://www.linkedin.com/in/vinaysomala/",
     github: "https://github.com/somalavinay879-18",
-    cv: "/VINAY.pdf",
+    cv: "/Vinay_Somala_CV.pdf",
+    cvs: [{ label: "Download CV", href: "/Vinay_Somala_CV.pdf" }],
     photo: "/vinay-portrait.jpg",
 };
 
-// The two rows of the diagram at the top of the page.
-export const processLane = {
-    sap: ["Purchase requisition", "Purchase order", "Goods receipt", "Invoice verification"],
-    data: ["Extract the records", "Clean and model in SQL", "KPIs and forecasts", "Better purchasing decisions"],
-};
+// Quick facts in the panel next to the introduction.
+export const facts = [
+    { label: "Studying", value: "M.Sc. Applied Data Science & AI, SRH University Hamburg" },
+    { label: "Graduating", value: "September 2027" },
+    { label: "Open to", value: "Working student and internship roles" },
+    { label: "Languages", value: "English (professional), German (A2), Telugu, Hindi" },
+    { label: "Code", value: "github.com/somalavinay879-18", href: "https://github.com/somalavinay879-18" },
+];
+
+// The two sides of the profile, shown under the introduction.
+export const sides = [
+    {
+        name: "Data science & AI",
+        text: "Machine learning, forecasting and data engineering on real datasets, from raw files to a tested pipeline and a live dashboard.",
+        points: ["Python, SQL, Pandas", "scikit-learn, XGBoost, time-series forecasting", "ETL pipelines in DuckDB, tested in CI", "Power BI, Tableau, Streamlit"],
+        link: { label: "See the data science projects", href: "#projects" },
+    },
+    {
+        name: "SAP & supply chain",
+        text: "Hands-on SAP S/4HANA MM training covering the full Procure-to-Pay process, plus supply chain analytics from my Master’s specialisation.",
+        points: ["SAP S/4HANA MM in SAP Fiori and SAP GUI", "Procure-to-Pay, master data, purchase orders", "Demand forecasting, safety stock, reorder points", "Supply chain simulation in AnyLogistix"],
+        link: { label: "See the SAP training", href: "#sap" },
+    },
+];
 
 export const featured = {
     title: "Olist Retail Analytics",
@@ -71,6 +91,37 @@ export const featured = {
             text: "Add promotion and holiday effects to the forecast, and try hierarchical or probabilistic forecasts once more history is available.",
         },
     ],
+    // Monthly KPIs from the pipeline output (Jan 2017 – Aug 2018, months with full data).
+    monthly: [
+        { month: "2017-01", orders: 787, lateRate: 2.9, review: 4.09 },
+        { month: "2017-02", orders: 1718, lateRate: 3.0, review: 4.1 },
+        { month: "2017-03", orders: 2617, lateRate: 4.6, review: 4.13 },
+        { month: "2017-04", orders: 2377, lateRate: 6.6, review: 4.07 },
+        { month: "2017-05", orders: 3640, lateRate: 3.0, review: 4.18 },
+        { month: "2017-06", orders: 3205, lateRate: 3.0, review: 4.18 },
+        { month: "2017-07", orders: 3946, lateRate: 2.8, review: 4.23 },
+        { month: "2017-08", orders: 4272, lateRate: 2.9, review: 4.27 },
+        { month: "2017-09", orders: 4227, lateRate: 4.4, review: 4.22 },
+        { month: "2017-10", orders: 4547, lateRate: 4.2, review: 4.17 },
+        { month: "2017-11", orders: 7423, lateRate: 12.4, review: 3.95 },
+        { month: "2017-12", orders: 5620, lateRate: 7.5, review: 4.04 },
+        { month: "2018-01", orders: 7187, lateRate: 5.7, review: 4.07 },
+        { month: "2018-02", orders: 6625, lateRate: 14.1, review: 3.86 },
+        { month: "2018-03", orders: 7168, lateRate: 19.0, review: 3.76 },
+        { month: "2018-04", orders: 6919, lateRate: 4.5, review: 4.17 },
+        { month: "2018-05", orders: 6833, lateRate: 6.6, review: 4.21 },
+        { month: "2018-06", orders: 6145, lateRate: 1.2, review: 4.29 },
+        { month: "2018-07", orders: 6233, lateRate: 3.4, review: 4.29 },
+        { month: "2018-08", orders: 6421, lateRate: 6.2, review: 4.29 },
+    ],
+    // Inventory policy for the five largest categories (units per week, 2-week lead time, 95% service level).
+    inventory: [
+        { category: "health beauty", weekly: 188, safety: 105, reorder: 482 },
+        { category: "bed bath table", weekly: 161, safety: 106, reorder: 427 },
+        { category: "housewares", weekly: 133, safety: 84, reorder: 351 },
+        { category: "watches gifts", weekly: 113, safety: 67, reorder: 293 },
+        { category: "sports leisure", weekly: 102, safety: 63, reorder: 267 },
+    ],
     links: [
         { label: "Open the live dashboard", href: "https://olist-retail-analytics-m4gmzrukba258sgprrpdke.streamlit.app" },
         { label: "View the code on GitHub", href: "https://github.com/somalavinay879-18/olist-retail-analytics" },
@@ -102,12 +153,38 @@ export const projects = [
         href: "https://github.com/somalavinay879-18/crypto-price-prediction-ml",
     },
     {
+        title: "ODI Cricket Analytics Dashboard",
+        kind: "Data visualisation",
+        summary:
+            "An interactive dashboard for exploring and comparing ODI cricket statistics, with the data stored in MongoDB Atlas.",
+        tech: ["Python", "MongoDB Atlas", "Streamlit", "Plotly"],
+    },
+    {
         title: "CareerTrack",
         kind: "Web application",
         summary:
-            "A Flask app for tracking job applications, with SQLite storage, status tracking, dashboard metrics and a Docker setup.",
-        tech: ["Python", "Flask", "SQLite", "Docker"],
+            "A Flask app for tracking job applications with search, status tracking, CSV import and export and an analytics page. Covered by 22 automated tests, continuous integration and a Docker setup.",
+        tech: ["Python", "Flask", "SQLite", "pytest", "Docker"],
         href: "https://github.com/somalavinay879-18/CareerTrack",
+    },
+];
+
+export const sapNext = {
+    program: "SAP MM – Inventory Management & Invoice Verification",
+    provider: "ERP4Students, Technische Hochschule Brandenburg",
+    when: "Winter semester 2026/27, in progress",
+};
+
+export const experience = [
+    {
+        role: "Full Stack Engineer Intern",
+        company: "Karthikeyan Software Solutions Pvt. Ltd., India",
+        dates: "Jan 2023 – Jul 2023",
+        points: [
+            "Built responsive web components with HTML, CSS, JavaScript and PHP.",
+            "Worked with MySQL data storage and retrieval.",
+            "Supported debugging, testing and Git-based code changes.",
+        ],
     },
 ];
 
@@ -130,33 +207,50 @@ export const sap = {
 
 export const credentials = [
     {
-        title: "SAP Joule Studio certification",
-        issuer: "SAP",
-        date: "Exam planned for December 2026",
-        status: "preparing",
+        provider: "SAP",
+        items: [
+            {
+                title: "SAP Joule Studio certification",
+                kind: "Official SAP certification",
+                date: "Exam planned for December 2026",
+                status: "preparing",
+            },
+            {
+                title: "Introducing Joule Studio",
+                kind: "Course completion badge, SAP Learning",
+                date: "November 2026",
+                href: "https://badger.learning.sap.com/verify/xevap-mefem-dukig-vafer-babil",
+            },
+            {
+                title: "SAP MM – Sourcing & Procurement with SAP S/4HANA",
+                kind: "ERP4Students, Technische Hochschule Brandenburg",
+                date: "Summer semester 2026",
+            },
+        ],
     },
     {
-        title: "Introducing Joule Studio",
-        issuer: "SAP, course completion badge",
-        date: "November 2026",
-        href: "https://badger.learning.sap.com/verify/xevap-mefem-dukig-vafer-babil",
+        provider: "Amazon Web Services (AWS)",
+        items: [
+            {
+                title: "AWS Academy Graduate – Machine Learning Foundations",
+                kind: "Training badge, AWS Academy",
+                date: "November 2022",
+                href: "https://www.credly.com/users/vinay-somala",
+            },
+            {
+                title: "AWS Academy Graduate – Cloud Foundations",
+                kind: "Training badge, AWS Academy",
+                date: "October 2022",
+                href: "https://www.credly.com/badges/d627f672-0aaa-4665-b8cc-a2627d978aee",
+            },
+        ],
     },
     {
-        title: "SAP MM – Sourcing & Procurement",
-        issuer: "ERP4Students, TH Brandenburg",
-        date: "2026",
-    },
-    {
-        title: "AWS Academy Graduate – Machine Learning Foundations",
-        issuer: "Amazon Web Services, training badge",
-        date: "November 2022",
-        href: "https://www.credly.com/users/vinay-somala",
-    },
-    {
-        title: "AWS Academy Graduate – Cloud Foundations",
-        issuer: "Amazon Web Services, training badge",
-        date: "October 2022",
-        href: "https://www.credly.com/badges/d627f672-0aaa-4665-b8cc-a2627d978aee",
+        provider: "DataCamp",
+        items: [
+            { title: "Data Analyst with Python", kind: "Career track", date: "Completed" },
+            { title: "SQL Certification track", kind: "Skill track", date: "Completed" },
+        ],
     },
 ];
 
@@ -175,12 +269,17 @@ export const education = [
     },
 ];
 
-export const skills = [
-    { group: "Analysis", items: ["Python", "SQL", "Pandas", "NumPy", "Statistical modelling", "Excel"] },
-    { group: "Machine learning", items: ["scikit-learn", "XGBoost", "Feature engineering", "Time-series forecasting", "Model evaluation"] },
-    { group: "Data engineering", items: ["ETL pipelines", "DuckDB", "MySQL", "SQLite", "MongoDB", "pytest", "GitHub Actions"] },
-    { group: "Dashboards", items: ["Power BI", "Tableau", "Streamlit", "Plotly", "Matplotlib"] },
-    { group: "SAP and supply chain", items: ["SAP S/4HANA MM", "SAP Fiori", "SAP GUI", "Procure-to-Pay", "Master data", "Demand forecasting", "AnyLogistix"] },
-    { group: "Tools", items: ["Git", "Docker", "Flask", "Jupyter", "VS Code"] },
-    { group: "Languages", items: ["English", "German (A2, learning)"] },
-];
+export const skills = {
+    "Data science & AI": [
+        { group: "Analysis", items: ["Python", "SQL", "Pandas", "NumPy", "Statistical modelling", "Excel"] },
+        { group: "Machine learning", items: ["scikit-learn", "XGBoost", "Feature engineering", "Time-series forecasting", "Model evaluation"] },
+        { group: "Data engineering", items: ["ETL pipelines", "DuckDB", "MySQL", "SQLite", "MongoDB", "pytest", "GitHub Actions"] },
+        { group: "Dashboards", items: ["Power BI", "Tableau", "Streamlit", "Plotly", "Matplotlib"] },
+        { group: "Tools", items: ["Git", "GitHub", "Docker", "Flask", "Jupyter", "VS Code"] },
+    ],
+    "SAP & supply chain": [
+        { group: "SAP S/4HANA MM", items: ["SAP Fiori", "SAP GUI", "Enterprise structure", "Material and vendor master data"] },
+        { group: "Procurement", items: ["Procure-to-Pay", "Purchase requisitions", "RFQs", "Purchase orders", "Goods receipt", "Invoice verification"] },
+        { group: "Supply chain", items: ["Demand forecasting", "Safety stock and reorder points", "AnyLogistix"] },
+    ],
+};

@@ -24,14 +24,17 @@ export default function Contact() {
                         >
                             Email me
                         </a>
-                        <a
-                            href={profile.cv}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-md border border-paper/60 px-5 py-3 font-medium text-paper transition-colors hover:bg-paper hover:text-ink"
-                        >
-                            Download CV
-                        </a>
+                        {profile.cvs.map((cv) => (
+                            <a
+                                key={cv.href}
+                                href={cv.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-md border border-paper/60 px-5 py-3 font-medium text-paper transition-colors hover:bg-paper hover:text-ink"
+                            >
+                                {cv.label}
+                            </a>
+                        ))}
                     </div>
                 </div>
 
