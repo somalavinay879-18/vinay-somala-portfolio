@@ -1,17 +1,27 @@
-# React + Vite
+# Vinay Somala – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website: **[somalavinay.vercel.app](https://somalavinay.vercel.app)**
 
-Currently, two official plugins are available:
+M.Sc. Applied Data Science & AI student at SRH University Hamburg, with hands-on SAP S/4HANA MM training.
+The site presents my data science and SAP supply chain work: an interactive case study (Olist Retail Analytics),
+my other projects, certifications and my CV.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Projects shown on the site
 
-## React Compiler
+| Project | Area | Repository |
+|---|---|---|
+| LexiSyncAI: evidence-grounded legal Q&A | LLMs, RAG | [lexisync-ai](https://github.com/somalavinay879-18/lexisync-ai) |
+| Olist Retail Analytics | Data engineering, forecasting | [olist-retail-analytics](https://github.com/somalavinay879-18/olist-retail-analytics) |
+| Supermarket Sales Data Pipeline | Data engineering | [supermarket-data-pipeline](https://github.com/somalavinay879-18/supermarket-data-pipeline) |
+| Cryptocurrency Price Direction Prediction | Machine learning | [crypto-price-prediction-ml](https://github.com/somalavinay879-18/crypto-price-prediction-ml) |
+| CareerTrack | Web app (Flask) | [CareerTrack](https://github.com/somalavinay879-18/CareerTrack) |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+React, Vite and Tailwind CSS, deployed on Vercel. All text lives in `src/content.js`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-Trigger deployment Thu Jul  2 16:11:31 CEST 2026
+```bash
+npm install
+npm run dev      # local preview on http://localhost:5173
+npm run build    # production build in dist/
+```

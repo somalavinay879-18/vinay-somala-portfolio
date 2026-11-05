@@ -30,8 +30,9 @@ export const facts = [
 export const sides = [
     {
         name: "Data science & AI",
-        text: "Machine learning, forecasting and data engineering on real datasets, from raw files to a tested pipeline and a live dashboard.",
-        points: ["Python, SQL, Pandas", "scikit-learn, XGBoost, time-series forecasting", "ETL pipelines in DuckDB, tested in CI", "Power BI, Tableau, Streamlit"],
+        text: "Machine learning, LLM applications, forecasting and data engineering on real datasets, from raw files to a tested pipeline and a live dashboard.",
+        points: ["Python, SQL, Pandas", "LLMs and RAG: hybrid search, reranking, cited answers",
+                 "scikit-learn, XGBoost, time-series forecasting", "ETL pipelines in DuckDB, tested in CI", "Power BI, Tableau, Streamlit"],
         link: { label: "See the data science projects", href: "#projects" },
     },
     {
@@ -129,6 +130,14 @@ export const featured = {
 };
 
 export const projects = [
+    {
+        title: "LexiSyncAI: Evidence-Grounded Legal Q&A",
+        kind: "LLM & RAG",
+        summary:
+            "Answers questions about legal PDFs (GDPR, ePrivacy) with a local LLM. Hybrid BM25 + embedding search with a cross-encoder reranker finds the right paragraph, every claim is checked against its quote, and the cited page is shown highlighted. On 22 test questions it raised correctness from 56% to 78% over the LLM alone and refused all unanswerable questions, which the LLM alone answered with invented facts.",
+        tech: ["Python", "RAG", "Ollama (Qwen 2.5)", "sentence-transformers", "BM25", "Streamlit", "pytest", "GitHub Actions"],
+        href: "https://github.com/somalavinay879-18/lexisync-ai",
+    },
     {
         title: "Supermarket Sales Data Pipeline",
         kind: "Data engineering",
