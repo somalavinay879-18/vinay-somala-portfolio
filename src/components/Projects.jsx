@@ -164,17 +164,30 @@ export default function Projects() {
                             <div className="mt-4">
                                 <Tags items={project.tech} />
                             </div>
-                            {project.href && (
-                                <a
-                                    href={project.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-4 inline-flex items-center gap-1.5 font-medium text-pine underline-offset-4 hover:underline"
-                                >
-                                    View the code on GitHub
-                                    <ExternalLink size={15} aria-hidden="true" />
-                                </a>
-                            )}
+                            <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+                                {project.live && (
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 font-medium text-pine underline-offset-4 hover:underline"
+                                    >
+                                        Open the live dashboard
+                                        <ExternalLink size={15} aria-hidden="true" />
+                                    </a>
+                                )}
+                                {project.href && (
+                                    <a
+                                        href={project.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 font-medium text-pine underline-offset-4 hover:underline"
+                                    >
+                                        View the code on GitHub
+                                        <ExternalLink size={15} aria-hidden="true" />
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </li>
                 ))}

@@ -38,7 +38,7 @@ export const sides = [
     {
         name: "SAP & supply chain",
         text: "Hands-on SAP S/4HANA MM training covering the full Procure-to-Pay process, plus supply chain analytics from my Master’s specialisation.",
-        points: ["SAP S/4HANA MM in SAP Fiori and SAP GUI", "Procure-to-Pay, master data, purchase orders", "Demand forecasting, safety stock, reorder points", "Supply chain simulation in AnyLogistix"],
+        points: ["SAP S/4HANA MM in SAP Fiori and SAP GUI", "Procure-to-Pay, master data, purchase orders", "Process mining on a real SAP P2P event log", "Demand forecasting, safety stock, reorder points", "Supply chain simulation in AnyLogistix"],
         link: { label: "See the SAP training", href: "#sap" },
     },
 ];
@@ -130,6 +130,15 @@ export const featured = {
 };
 
 export const projects = [
+    {
+        title: "P2P Process Intelligence: SAP Purchase-to-Pay Process Mining",
+        kind: "Process mining · SAP MM",
+        summary:
+            "Process mining on a real SAP purchase-to-pay event log (BPI Challenge 2019: 1.46 million events, 251,734 PO items, €1 billion in orders), in SQL with DuckDB. Payment takes a median 78 days after the order, and most of the wait is in finance (42 days from invoice to payment), not in delivery. 22% of items get a payment block, which adds two weeks; 654 items worth €1.75 million were paid before the goods receipt. A payment-block early warning finds a block in 42% of the riskiest 10% of new orders, against 23% at random. Live dashboard with filters, a supplier matrix and a risk review list.",
+        tech: ["SQL", "DuckDB", "Python", "scikit-learn", "Streamlit", "pytest", "GitHub Actions"],
+        href: "https://github.com/somalavinay879-18/p2p-process-intelligence",
+        live: "https://p2p-process-intelligence-cqbkh3csr4e8m4khxkumrd.streamlit.app",
+    },
     {
         title: "LexiSyncAI: Evidence-Grounded Legal Q&A",
         kind: "LLM & RAG",
